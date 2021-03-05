@@ -4,12 +4,25 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "foo": "git ls-remote --head --exit-code origin foo_branch | cut -f 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mcmuchenje/pre-psuh.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {
+  "bugs": {
+    "url": "https://github.com/mcmuchenje/pre-psuh/issues"
+  },
+  "homepage": "https://github.com/mcmuchenje/pre-psuh#readme",
+  "devDependencies": {
     "pre-push": "^0.1.1"
+  },
+  "pre-push": {
+    "run": ["foo"],
+    "silent": true
   }
 }
